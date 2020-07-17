@@ -22,6 +22,9 @@ Windows10
 python 3.7.5  
  
 # プログラムの使い方
+
+下記コマンドにより, プログラムの実行が可能.  
+imgフォルダにグラフを描画した画像が生成される.
  
 ```bash
 git clone https://github.com/takumi13/COVID19_DataVisualizer.git
