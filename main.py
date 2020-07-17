@@ -15,7 +15,7 @@ GitHub (https://github.com/kaz-ogiwara/covid19/)
 '''
 filepath_japan = './data/prefectures.csv'
 
-debug_flag = False  # Trueならば, グラフ化するデータソースなどをコンソールに出力する
+debug_flag = True  # Trueならば, グラフ化するデータソースなどをコンソールに出力する
 
 #-----------------------------------------------------------
 # 描画の準備
@@ -39,7 +39,6 @@ for key in dic_day_all:
 #-----------------------------------------------------------
 japan_plus  = []    # 全国の新規陽性者数
 japan_all   = []    # 全国の新規検査人数
-japan_ratio = []    # 全国のPCR検査新規陽性率
 imgpath_japan_ratio = './img/japan_pcr_ratio.png'
 imgpath_japan_num   = './img/japan_pcr_num.png'
 imgpath_japan_all   = './img/japan_pcr_all.png'
@@ -50,14 +49,12 @@ title_japan_all     = 'Japan PCR plus_num and inspected_num and ratio'
 for key in dic_day_all:
     japan_plus.append(dic_day_all[key][0])
     japan_all.append(dic_day_all[key][1])
-    japan_ratio.append(dic_day_all[key][2])  
 
 #-----------------------------------------------------------
 # 東京の情報をarray化
 #-----------------------------------------------------------
 tokyo_plus  = []    # 東京の新規陽性者数
 tokyo_all   = []    # 東京の新規検査人数
-tokyo_ratio = []    # 東京のPCR検査新規陽性率
 imgpath_tokyo_ratio = './img/tokyo_pcr_ratio.png'
 imgpath_tokyo_num   = './img/tokyo_pcr_num.png'
 imgpath_tokyo_all   = './img/tokyo_pcr_all.png'
@@ -68,7 +65,6 @@ title_tokyo_all     = 'Tokyo PCR plus_num and inspected_num and ratio'
 for key in dic_day_tokyo:
     tokyo_plus.append(dic_day_tokyo[key][0])
     tokyo_all.append(dic_day_tokyo[key][1])
-    tokyo_ratio.append(dic_day_tokyo[key][2])
 
 
 #-----------------------------------------------------------
@@ -103,13 +99,13 @@ for i in range(len(japan_all_ave)):
 
 if debug_flag==True:
     print('Tokyo')
-    for i in range(len(japan_plus)):
-        print('{} : '.format(days_label[i]) + '{:>3}'.format(tokyo_plus[i]) + ', {:4.1f}'.format(tokyo_all[i]) + ', {:.2f}%'.format(tokyo_ratio[i]))
+    for i in range(len(japan_plus_ave)):
+        print('{} : '.format(days_label_ave[i]) + '{:>3}'.format(tokyo_plus_ave[i]) + ', {:4.1f}'.format(tokyo_all_ave[i]) + ', {:.2f}%'.format(tokyo_ratio_ave[i]))
     print('----------------------------------------------------------')
 
     print('Japan')
-    for i in range(len(japan_plus)):
-        print('{} : '.format(days_label[i]) + '{:>3}'.format(japan_plus[i]) + ', {:>5.1f}'.format(japan_all[i]) + ', {:.2f}%'.format(japan_ratio[i]))
+    for i in range(len(japan_plus_ave)):
+        print('{} : '.format(days_label_ave[i]) + '{:>3}'.format(japan_plus_ave[i]) + ', {:>5.1f}'.format(japan_all_ave[i]) + ', {:.2f}%'.format(japan_ratio_ave[i]))
     print('----------------------------------------------------------')
 
 #-----------------------------------------------------------

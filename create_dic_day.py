@@ -93,17 +93,13 @@ def create_dic_day(filepath_japan, debug_flag):
 
     #-----------------------------------------------------------
     # 辞書型の定義
-    # {'月日' : 新規陽性者数, 新規PCR検査数, 陽性率(%)}
+    # {'月日' : 新規陽性者数, 新規PCR検査数}
     # 0311はとばして0312から新規人数を格納するため, i>0とする
     # 陽性率は130行目にappendしている
     #-----------------------------------------------------------
     dic_day_japan   = {}
     dic_day_tokyo = {}
 
-    #-----------------------------------------------------------
-    # {'月日' : 新規陽性者数, 新規PCR検査数}
-    # の辞書を先に作る
-    #-----------------------------------------------------------
     i = 0
     for day in dic_japan:
         if i > 0:
@@ -128,25 +124,5 @@ def create_dic_day(filepath_japan, debug_flag):
         print('sum_japan  = {}'.format(sum_japan))
         print('ratio = {}'.format(ratio))
         print('plus/pcr_num [%] = {}'.format(1.0/ratio))
-
-
-    #-----------------------------------------------------------
-    # {'月日' : 新規陽性者数, 新規PCR検査数, 陽性率(%)}
-    # の辞書をつくるために, 各月日における陽性率をappendしていく
-    #-----------------------------------------------------------
-    i = 0
-    for day in dic_japan:
-        if i > 0:
-            if dic_day_japan[day][1] != 0:
-                ratio_japan = round(100 * dic_day_japan[day][0] / dic_day_japan[day][1], 1)
-            else:
-                ratio_japan = 0
-            if dic_day_tokyo[day][1] != 0:
-                ratio_tokyo = round(100 * dic_day_tokyo[day][0] / dic_day_tokyo[day][1], 1)
-            else:
-                ratio_tokyo = 0
-            dic_day_japan[day].append(ratio_japan)
-            dic_day_tokyo[day].append(ratio_tokyo)
-        i += 1
 
     return dic_day_japan, dic_day_tokyo
