@@ -1,7 +1,7 @@
 
 import numpy as np
 
-import gen_graph
+from gen_graph import *
 from create_dic_day import create_dic_day
 
 '''
@@ -13,14 +13,14 @@ GitHub (https://github.com/kaz-ogiwara/covid19/)
 からCOVID-19の感染者やPCR検査数に関するデータソースをお借りして
 簡易的なビジュアライザーを作成した
 '''
-filepath_japan = './data/prefectures.csv'
 
-debug_flag = True  # Trueならば, グラフ化するデータソースなどをコンソールに出力する
+filepath = './data/prefectures.csv'
+debug_flag = True  # Trueならば, グラフ化するデータソースをコンソールに出力する
 
 #-----------------------------------------------------------
 # 描画の準備
 #-----------------------------------------------------------
-dic_day_all, dic_day_tokyo = create_dic_day(filepath_japan, debug_flag)
+dic_day_all, dic_day_tokyo = create_dic_day(filepath)
 
 #-----------------------------------------------------------
 # 日付
@@ -111,11 +111,11 @@ if debug_flag==True:
 #-----------------------------------------------------------
 # グラフ作成 (移動平均を考慮)
 #-----------------------------------------------------------
-gen_graph.create_img_nums(days_label_ave, x1_ave, x2_ave, japan_plus_ave, japan_all_ave, imgpath_japan_num, title_japan_num)
-gen_graph.create_img_nums(days_label_ave, x1_ave, x2_ave, tokyo_plus_ave, tokyo_all_ave, imgpath_tokyo_num, title_tokyo_num)
+create_img_nums(days_label_ave, x1_ave, x2_ave, japan_plus_ave, japan_all_ave, imgpath_japan_num, title_japan_num)
+create_img_nums(days_label_ave, x1_ave, x2_ave, tokyo_plus_ave, tokyo_all_ave, imgpath_tokyo_num, title_tokyo_num)
 
-gen_graph.create_img_num_ratio(days_label_ave, x1_ave, japan_ratio_ave, japan_plus_ave, imgpath_japan_ratio, title_japan_ratio)
-gen_graph.create_img_num_ratio(days_label_ave, x1_ave, tokyo_ratio_ave, tokyo_plus_ave, imgpath_tokyo_ratio, title_tokyo_ratio)
+create_img_num_ratio(days_label_ave, x1_ave, japan_ratio_ave, japan_plus_ave, imgpath_japan_ratio, title_japan_ratio)
+create_img_num_ratio(days_label_ave, x1_ave, tokyo_ratio_ave, tokyo_plus_ave, imgpath_tokyo_ratio, title_tokyo_ratio)
 
-gen_graph.create_img_all(days_label_ave, x1_ave, x2_ave, japan_plus_ave, japan_all_ave, japan_ratio_ave, imgpath_japan_all, title_japan_all)
-gen_graph.create_img_all(days_label_ave, x1_ave, x2_ave, tokyo_plus_ave, tokyo_all_ave, tokyo_ratio_ave, imgpath_tokyo_all, title_tokyo_all)
+create_img_all(days_label_ave, x1_ave, x2_ave, japan_plus_ave, japan_all_ave, japan_ratio_ave, imgpath_japan_all, title_japan_all)
+create_img_all(days_label_ave, x1_ave, x2_ave, tokyo_plus_ave, tokyo_all_ave, tokyo_ratio_ave, imgpath_tokyo_all, title_tokyo_all)
