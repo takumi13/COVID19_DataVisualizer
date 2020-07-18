@@ -28,7 +28,7 @@ https://qiita.com/takumi13/private/718277ce767c9b3dc0c5
 緑の棒線 : 新規PCR検査数  
 青い棒線 : 新規感染者数  
 赤い折れ線 : 陽性率(%) = 100*新規感染者数 / 新規PCR検査数  
-![tokyo_pcr_all](https://user-images.githubusercontent.com/38643137/87735483-9d298f80-c810-11ea-9eaa-c87e30df1dd1.png)
+![tokyo_pcr_all](https://user-images.githubusercontent.com/38643137/87846203-258b5b80-c909-11ea-82d5-63bd134d65b8.png)
 
 # 動作環境
 Windows10  
