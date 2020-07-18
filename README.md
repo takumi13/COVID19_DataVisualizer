@@ -12,7 +12,7 @@ git clone https://github.com/kaz-ogiwara/covid19.git
 ```
 
 グラフ化する際の前処理の詳細はこちらの記事にまとめています.  
-[Python] COVID-19の感染状況に関するオープンデータの正規化　　
+[Python] COVID-19の感染状況に関するオープンデータの正規化  
 https://qiita.com/takumi13/private/9210845b414769bd1589
 
 # 注意事項
