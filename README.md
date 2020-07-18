@@ -11,6 +11,9 @@
 git clone https://github.com/kaz-ogiwara/covid19.git
 ```
 
+グラフ化する際の前処理の詳細はこちらの記事にまとめています.
+https://qiita.com/takumi13/private/9210845b414769bd1589
+
 # 注意事項
 このプログラムによって生成される画像は, COVID-19の感染状況を正確に可視化できているとは言えない.  
 手前味噌で恐縮ですが, その理由は以下の記事を参照してください.
